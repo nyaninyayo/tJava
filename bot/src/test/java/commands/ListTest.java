@@ -7,11 +7,9 @@ import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import ru.tinkoff.edu.java.bot.DTO.LinkResponse;
 import ru.tinkoff.edu.java.bot.DTO.ListLinkResponse;
 import ru.tinkoff.edu.java.bot.Model.Link;
 import ru.tinkoff.edu.java.bot.clients.LinkClient;
@@ -19,8 +17,6 @@ import ru.tinkoff.edu.java.bot.telegram.command.ListCommand;
 
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
