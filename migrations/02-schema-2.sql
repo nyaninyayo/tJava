@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset zhamwan:table-chat
+--changeset nyaninyayo:table-chat
 
 create table chat(
     id bigserial primary key,
