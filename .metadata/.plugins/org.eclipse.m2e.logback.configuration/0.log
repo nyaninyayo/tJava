@@ -1,0 +1,5 @@
+2023-04-25 23:25:29,416 [Worker-9: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-04-25 23:31:11,455 [Worker-26: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/${testcontainers.version}/testcontainers-bom-${testcontainers.version}.pom
+2023-04-25 23:31:11,747 [Worker-26: reload maven project] WARN  o.e.m.c.i.embedder.EclipseLogger - Failed to build parent project for ru.tinkoff.edu:bot:jar:1.0-SNAPSHOT
+2023-04-25 23:32:38,760 [Worker-7: reload maven project] WARN  o.e.m.c.i.embedder.EclipseLogger - Failed to build parent project for ru.tinkoff.edu:link-parser:jar:1.0-SNAPSHOT
+2023-04-25 23:38:50,542 [Worker-23: reload maven project] WARN  o.e.m.c.i.embedder.EclipseLogger - Failed to build parent project for ru.tinkoff.edu:scrapper:jar:1.0-SNAPSHOT
