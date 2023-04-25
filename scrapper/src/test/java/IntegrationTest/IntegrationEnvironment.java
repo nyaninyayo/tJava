@@ -8,7 +8,6 @@ import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.resource.DirectoryResourceAccessor;
 import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -19,7 +18,7 @@ public class IntegrationEnvironment {
     static final PostgreSQLContainer CONTAINER;
 
     static {
-        CONTAINER = new PostgreSQLContainer("postgres:15")
+        CONTAINER = (PostgreSQLContainer) new PostgreSQLContainer("postgres:15")
                 .withDatabaseName("scrapper")
                 .withUsername("postgres")
                 .withPassword("1234")

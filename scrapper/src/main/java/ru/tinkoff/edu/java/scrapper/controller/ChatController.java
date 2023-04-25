@@ -16,11 +16,11 @@ public class ChatController {
 
     @PostMapping(value = "{id}")
     public void createChat(@PathVariable Long id) {
-        chatService.addChat(id);
+        chatService.register(id);
     }
 
     @DeleteMapping(value = "{id}")
     public void deleteChat(@PathVariable Long id) {
-        chatService.deleteChat(id);
+        chatService.unregister(id);
     }
 }

@@ -4,6 +4,7 @@
 
 create table chat(
     id bigserial primary key,
+    chat_id bigserial,
     name text
 )
 

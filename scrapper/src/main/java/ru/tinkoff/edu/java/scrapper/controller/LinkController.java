@@ -23,19 +23,19 @@ public class LinkController {
 
     @GetMapping
     public ListLinkResponse getLinks(@RequestHeader("Tg-Chat-Id") Long chatId) {
-        List<Link> list = linkService.getLinks(chatId);
+        List<Link> list = linkService.findAll(chatId);
         return new ListLinkResponse(list, list.size());
     }
 
     @PostMapping
     public LinkResponse addLink(@RequestHeader("Tg-Chat-Id") Long chatId, @RequestBody AddLinkRequest request) {
-        Link link = linkService.addLink(chatId, request);
+        Link link = linkService.add(chatId, request.url());
         return new LinkResponse(link.getId(), link.getUrl());
     }
 
     @DeleteMapping
     public LinkResponse deleteLink(@RequestHeader("Tg-Chat-Id") Long chatId, @RequestBody RemoveLinkRequest request) {
-        Link link = linkService.deleteLink(chatId, request);
+        Link link = linkService.remove(chatId, request.link());
         return new LinkResponse(link.getId(), link.getUrl());
     }
 
