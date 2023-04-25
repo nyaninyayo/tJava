@@ -1,26 +1,22 @@
-package ru.tinkoff.edu.java.scrapper.Model;
-
+package ru.tinkoff.edu.java.scrapper.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 @Data
-@NoArgsConstructor
 public class Link {
-    private long id;
+
+
+    private Long id;
     private String url;
-    private Timestamp update;
+    private Timestamp checkedAt;
+    private Timestamp ghPushedAt;
+    private String ghDescription;
+    private int ghForksCount;
+    private Timestamp soLastEditDate;
+    private int soAnswerCount;
 
-    public Link(long id, String url, Timestamp update) {
-        this.id = id;
-        this.url = url;
-        this.update = update;
-    }
 
-    public Link(String url, Timestamp update) {
-        this.url = url;
-        this.update = update;
-    }
+
 }

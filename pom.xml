@@ -5,21 +5,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.tinkoff.edu</groupId>
-    <artifactId>tinkoff-app</artifactId>
+    <artifactId>app</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
         <spring-boot.version>3.0.1</spring-boot.version>
         <spring-cloud.version>2022.0.0</spring-cloud.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <annotations.version>24.0.1</annotations.version>
+        <annotations.version>23.1.0</annotations.version>
+        <junit.version>5.8.1</junit.version>
+        <mockito.version>4.3.1</mockito.version>
+        <testcontainers.version>1.17.1</testcontainers.version>
+        <spring.test.version>3.0.5</spring.test.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
         <module>bot</module>
         <module>link-parser</module>
         <module>scrapper</module>
+        <module>scrapper-jooq</module>
     </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -29,7 +35,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -37,12 +42,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
-                <groupId>org.jetbrains</groupId>
-                <artifactId>annotations</artifactId>
-                <version>${jetbrains-annotations.version}</version>
-                <scope>provided</scope>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
@@ -50,6 +60,12 @@
                 <version>${testcontainers.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.test.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -60,6 +76,7 @@
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>${annotations.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -76,7 +93,7 @@
                         </layers>
                         <excludes>
                             <exclude>
-                                <groupId>org.project-lombok</groupId>
+                                <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
                             </exclude>
                         </excludes>
@@ -99,7 +116,18 @@
                         <parameters>true</parameters>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
+
+
 </project>

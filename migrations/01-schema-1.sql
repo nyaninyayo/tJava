@@ -1,11 +1,11 @@
 --liquibase formatted sql
 
---changeset nyaninyayo:table-link
+--changeset lwbeamer:create-user-table-1
+CREATE TABLE "user" (
+                        chat_id bigint PRIMARY KEY,
+                        username text UNIQUE NOT NULL,
+                        first_name text,
+                        last_name text
+);
 
-create table link(
-    id bigserial primary key,
-    url varchar(255) unique not null,
-    update timestamp not null
-)
-
---rollback DROP TABLE "link";
+--rollback DROP TABLE "user";

@@ -1,11 +1,10 @@
 --liquibase formatted sql
 
---changeset nyaninyayo:table-chat_link
+--changeset lwbeamer:create-user-link-table-1
+CREATE TABLE "user_link" (
+                             link_id bigint REFERENCES "link" (id),
+                             chat_id bigint REFERENCES "user" (chat_id),
+                             PRIMARY KEY (link_id,chat_id)
+);
 
-create table chat_link(
-    chat_id bigint not null references "chat" (id),
-    link_id bigint not null REFERENCES "link" (id),
-    PRIMARY KEY (chat_id,link_id)
-)
-
---rollback DROP TABLE "chat_link";
+--rollback DROP TABLE "user_link";

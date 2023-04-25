@@ -1,3 +1,4 @@
-package ru.tinkoff.edu.java.bot.DTO;
+package ru.tinkoff.edu.java.bot.dto;
 
-public record LinkUpdate(Long id, String url, String description, Long[] tgChatIds) {}
+public record LinkUpdate(Long id, String url, String description, Long[] tgChatIds) {
+}
