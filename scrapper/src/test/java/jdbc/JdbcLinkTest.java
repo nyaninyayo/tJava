@@ -21,7 +21,7 @@ import java.util.List;
 public class JdbcLinkTest extends IntegrationEnvironment {
 
     @Autowired
-    private LinkJdbcTemplateRepository linkRepository;
+    private LinkRepository linkRepository;
 
     @Autowired
     private LinkRowMapper linkRowMapper;

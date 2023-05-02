@@ -20,11 +20,11 @@ import ru.tinkoff.edu.java.scrapper.repository.jdbc.SubscriptionJdbcTemplateRepo
 import java.sql.Timestamp;
 import java.util.List;
 
-@SpringBootTest(classes = {ScrapperApplication.class, TestConfiguration.class})
+@SpringBootTest(classes = {ScrapperApplication.class, TestConfiguration.class, JdbcAccessConfiguration.class})
 public class JdbcSubscriptionTest extends IntegrationEnvironment {
 
     @Autowired
-    private SubscriptionJdbcTemplateRepository subscriptionRepository;
+    private SubscriptionRepository subscriptionRepository;
 
     @Autowired
     private LinkRowMapper linkRowMapper;
@@ -212,7 +212,6 @@ public class JdbcSubscriptionTest extends IntegrationEnvironment {
         jdbcTemplate.update("insert into \"user\" (chat_id, username, first_name, last_name) values(?, ?, ?, ?)", 42L, "robtop21", "Robert", "Polson");
         jdbcTemplate.update("insert into \"user\" (chat_id, username, first_name, last_name) values(?, ?, ?, ?)", 50L, "alucard", "Will", "Smith");
 
-        //всего добавим 20 ссылок
         for (int i = 0; i < 20; i++) {
             Link linkToAdd = new Link();
             linkToAdd.setUrl("https://stackoverflow.com/questions/2336692/java-multiple-class-declarations-in-one-file" + i);

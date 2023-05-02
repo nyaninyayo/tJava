@@ -18,7 +18,6 @@ public class GitHubClient {
         this.webClient = WebClient.create(gitHubBaseUrl);
     }
 
-
     public GitHubClient(String baseUrl) {
         this.webClient = WebClient.create(baseUrl);
     }

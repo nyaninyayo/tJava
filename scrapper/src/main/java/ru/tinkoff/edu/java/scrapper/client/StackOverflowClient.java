@@ -19,11 +19,13 @@ public class StackOverflowClient {
     private final WebClient webClient;
 
 
+    //для использования baseUrl по умолчанию (берётся из properties)
     public StackOverflowClient() {
         this.webClient = WebClient.create(stackOverflowBaseUrl);
     }
 
 
+    //можно указать базовый URL
     public StackOverflowClient(String baseUrl) {
         this.webClient = WebClient.create(baseUrl);
     }

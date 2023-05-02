@@ -16,11 +16,11 @@ import ru.tinkoff.edu.java.scrapper.repository.jdbc.UserJdbcTemplateRepository;
 
 import java.util.List;
 
-@SpringBootTest(classes = {ScrapperApplication.class, TestConfiguration.class})
+@SpringBootTest(classes = {ScrapperApplication.class, TestConfiguration.class, JdbcAccessConfiguration.class})
 public class JdbcUserTest extends IntegrationEnvironment {
 
     @Autowired
-    private UserJdbcTemplateRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private UserRowMapper userRowMapper;
