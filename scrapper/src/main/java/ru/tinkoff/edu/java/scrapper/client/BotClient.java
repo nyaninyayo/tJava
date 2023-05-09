@@ -9,7 +9,7 @@ import ru.tinkoff.edu.java.scrapper.dto.LinkUpdate;
 import ru.tinkoff.edu.java.scrapper.exception.BotClientException;
 
 @Slf4j
-public class BotClient {
+public class BotClient implements UpdateNotificationService{
 
     @Value("${bot.baseurl}")
     private String botBaseUrl;

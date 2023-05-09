@@ -19,5 +19,7 @@ import java.util.List;
 public class ScrapperApplication {
     public static void main(String[] args) throws URISyntaxException {
         var ctx = SpringApplication.run(ScrapperApplication.class, args);
+
+        ApplicationConfig config = ctx.getBean(ApplicationConfig.class);
     }
 }
